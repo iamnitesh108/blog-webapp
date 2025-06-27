@@ -9,6 +9,8 @@ CREATE TABLE IF NOT EXISTS articles (
     last_updated TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE articles DROP CONSTRAINT title_not_empty;
+
 INSERT INTO articles (title, content, author, is_published, tags)
 VALUES
 ('My First Blog Post', 'This is the exciting content of my very first blog post about learning fullstack development!', 'Admin', TRUE, ARRAY['fullstack', 'learning', 'node']),
